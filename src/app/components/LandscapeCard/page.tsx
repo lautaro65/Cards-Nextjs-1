@@ -1,29 +1,23 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
+
 import { motion } from "framer-motion";
 import { Sun, Moon, Cloud, Star } from "lucide-react";
 
+
 interface LandscapeCardProps {
-  title: string;
-  description: string;
-  onDayNightChange: (isDay: boolean) => void;
+  title: string
+  description: string
+  isDay: boolean
+  onDayNightChange: (isDay: boolean) => void
 }
 
-const LandscapeCard: React.FC<LandscapeCardProps> = ({
-  title,
-  description,
-  onDayNightChange,
-}) => {
-  const [isDay, setIsDay] = useState(true);
-
+const LandscapeCard: React.FC<LandscapeCardProps> = ({ title, description, isDay, onDayNightChange }) => {
   const toggleDayNight = () => {
-    setIsDay((prev) => {
-      const newIsDay = !prev;
-      onDayNightChange(newIsDay);
-      return newIsDay;
-    });
-  };
+    onDayNightChange(!isDay)
+  }
+
 
   return (
     <motion.div
@@ -212,10 +206,10 @@ const LandscapeCard: React.FC<LandscapeCardProps> = ({
       {/* Toggle button */}
       <button
         onClick={toggleDayNight}
-        className="absolute top-2 right-2 p-2 rounded-full bg-white bg-opacity-20 hover:bg-opacity-30 transition-colors"
+        className="absolute top-2 right-2 p-2 rounded-full bg-white bg-opacity-30 hover:bg-opacity-40 transition-colors"
       >
         {isDay ? (
-          <Moon className="w-6 h-6 text-indigo-200" />
+          <Moon className="w-6 h-6 text-indigo-500" />
         ) : (
           <Sun className="w-6 h-6 text-yellow-300" />
         )}
