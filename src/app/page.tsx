@@ -27,7 +27,7 @@ export default function Home() {
           : "bg-gradient-to-br from-indigo-900 via-purple-900 to-black"
       }`}
     >
-      <div className="relative z-10 w-full  h-full ">
+      <div className="relative z-10  w-full   h-full  ">
         <LandscapeCard isDay={isDay} onDayNightChange={handleDayNightChange} />
       </div>
     </main>
