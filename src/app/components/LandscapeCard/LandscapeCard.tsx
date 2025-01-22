@@ -20,7 +20,7 @@ const LandscapeCard: React.FC<LandscapeCardProps> = ({
 
   return (
     <motion.div
-      className="w-80 h-96 rounded-xl overflow-hidden shadow-lg relative cursor-pointer"
+      className="w-52 h-56 rounded-xl overflow-hidden shadow-lg relative cursor-pointer"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
