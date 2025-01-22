@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import LandscapeCard from "./components/LandscapeCard/LandscapeCard";
 
-import LandscapeCard from "./components/LandscapeCard/page";
 export default function Home() {
   const [isDay, setIsDay] = useState(true);
   const [isClient, setIsClient] = useState(false);
@@ -28,12 +28,7 @@ export default function Home() {
       }`}
     >
       <div className="relative z-10">
-      <LandscapeCard
-          title="Paisaje Dinámico"
-          description="Experimenta la belleza de la naturaleza en el día y la noche con un solo clic."
-          isDay={isDay}
-          onDayNightChange={handleDayNightChange}
-        />
+        <LandscapeCard isDay={isDay} onDayNightChange={handleDayNightChange} />
       </div>
     </main>
   );

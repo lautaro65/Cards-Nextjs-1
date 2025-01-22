@@ -3,21 +3,20 @@
 import React from "react";
 
 import { motion } from "framer-motion";
-import { Sun, Moon, Cloud, Star } from "lucide-react";
-
+import { Sun, Moon, Cloud } from "lucide-react";
 
 interface LandscapeCardProps {
-  title: string
-  description: string
-  isDay: boolean
-  onDayNightChange: (isDay: boolean) => void
+  isDay: boolean;
+  onDayNightChange: (isDay: boolean) => void;
 }
 
-const LandscapeCard: React.FC<LandscapeCardProps> = ({ title, description, isDay, onDayNightChange }) => {
+const LandscapeCard: React.FC<LandscapeCardProps> = ({
+  isDay,
+  onDayNightChange,
+}) => {
   const toggleDayNight = () => {
-    onDayNightChange(!isDay)
-  }
-
+    onDayNightChange(!isDay);
+  };
 
   return (
     <motion.div
@@ -108,21 +107,25 @@ const LandscapeCard: React.FC<LandscapeCardProps> = ({ title, description, isDay
       {/* Enhanced landscape */}
       <div className="absolute bottom-0 left-0 right-0 h-1/2">
         {/* Hills */}
-        <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute bottom-0 w-full h-full">
+        <svg
+          viewBox="0 0 100 100"
+          preserveAspectRatio="none"
+          className="absolute bottom-0 w-full h-full"
+        >
           {/* Background mountains */}
-          <path 
-            d="M0 100 Q20 60 50 80 T100 100 L100 100 L0 100" 
+          <path
+            d="M0 100 Q20 60 50 80 T100 100 L100 100 L0 100"
             fill={isDay ? "#86efac" : "#064e3b"}
             className="transition-colors duration-1000"
           />
           {/* Grass with a plateau */}
-          <path 
-            d="M0 100 Q25 0 50 60 T100 100 L100 100 L0 100" 
+          <path
+            d="M0 100 Q25 0 50 60 T100 100 L100 100 L0 100"
             fill={isDay ? "#4ade80" : "#065f46"}
             className="transition-colors duration-1000"
           />
-          <path 
-            d="M29 100 Q0 50 70 60 T100 100 L100 100 L0 100" 
+          <path
+            d="M29 100 Q0 50 70 60 T100 100 L100 100 L0 100"
             fill={isDay ? "#22c55e" : "#047857"}
             className="transition-colors duration-1000"
           />
@@ -199,8 +202,11 @@ const LandscapeCard: React.FC<LandscapeCardProps> = ({ title, description, isDay
 
       {/* Content */}
       <div className="absolute bottom-0 left-0 right-0 p-4 bg-[#33333318] bg-opacity-50 text-white">
-        <h2 className="text-xl font-bold mb-1">{title}</h2>
-        <p className="text-sm">{description}</p>
+        <h2 className="text-xl font-bold mb-1">Paisaje Dinámico</h2>
+        <p className="text-sm">
+          Experimenta la belleza de la naturaleza en el día y la noche con un
+          solo clic.
+        </p>
       </div>
 
       {/* Toggle button */}
